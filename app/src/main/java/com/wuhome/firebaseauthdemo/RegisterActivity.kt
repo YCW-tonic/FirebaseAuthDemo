@@ -18,6 +18,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        tv_login.setOnClickListener {
+            //startActivity(Intent(this, LoginActivity::class.java))
+            onBackPressed()
+        }
+
         val btnLogin = findViewById<Button>(R.id.btnRegister)
         val etRegisterEmail = findViewById<EditText>(R.id.et_register_email)
         val etRegisterPassword = findViewById<EditText>(R.id.et_register_password)

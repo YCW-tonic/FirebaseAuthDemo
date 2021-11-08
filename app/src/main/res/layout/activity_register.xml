@@ -54,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:background="@color/transparent_gray"
             tools:text="abc@gmail.com"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -71,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:background="@color/transparent_gray"
             tools:text="123456"/>
     </com.google.android.material.textfield.TextInputLayout>
     <Button
@@ -84,7 +86,7 @@
         android:background="@color/colorAccent"
         android:foreground="?attr/selectableItemBackground"
         android:gravity="center"
-        android:text="Login"
+        android:text="Register"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -110,7 +112,7 @@
             android:padding="5dp"
             android:text="Already have an account?"/>
         <TextView
-            android:id="@+id/tv_register"
+            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
