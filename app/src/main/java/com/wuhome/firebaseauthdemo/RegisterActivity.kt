@@ -26,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnRegister)
         val etRegisterEmail = findViewById<EditText>(R.id.et_register_email)
         val etRegisterPassword = findViewById<EditText>(R.id.et_register_password)
-        btnLogin.setOnClickListener {
+        btnRegister.setOnClickListener {
             when{
                 TextUtils.isEmpty(etRegisterEmail.text.toString().trim{it<=' '})->{
                     Toast.makeText(
