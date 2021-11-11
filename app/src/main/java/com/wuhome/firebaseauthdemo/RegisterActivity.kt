@@ -1,5 +1,6 @@
 package com.wuhome.firebaseauthdemo
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,10 +15,11 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
+    private var mContext : Context? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-
+        mContext = applicationContext
         tv_login.setOnClickListener {
             //startActivity(Intent(this, LoginActivity::class.java))
             onBackPressed()
@@ -30,14 +32,14 @@ class RegisterActivity : AppCompatActivity() {
             when{
                 TextUtils.isEmpty(etRegisterEmail.text.toString().trim{it<=' '})->{
                     Toast.makeText(
-                        this@RegisterActivity,
+                        mContext,
                         "Please enter email.",
                         Toast.LENGTH_SHORT
                     )
                 }
                 TextUtils.isEmpty(etRegisterPassword.text.toString().trim{it<=' '})->{
                     Toast.makeText(
-                        this@RegisterActivity,
+                        mContext,
                         "Please enter password.",
                         Toast.LENGTH_SHORT
                     )
@@ -53,13 +55,13 @@ class RegisterActivity : AppCompatActivity() {
                                     var firebaseUser: FirebaseUser = task.result!!.user!!
 
                                     Toast.makeText(
-                                        this@RegisterActivity,
+                                        mContext,
                                         "You are registered successfully.",
                                         Toast.LENGTH_SHORT
                                     ).show()
 
                                     val intent =
-                                        Intent(this@RegisterActivity, MainActivity::class.java)
+                                        Intent(mContext, MainActivity::class.java)
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("user_id", firebaseUser.uid)
                                     intent.putExtra("email_id", email)
@@ -67,7 +69,7 @@ class RegisterActivity : AppCompatActivity() {
                                     finish()
                                 }else{
                                     Toast.makeText(
-                                        this@RegisterActivity,
+                                        mContext,
                                         task.exception!!.message.toString(),
                                         Toast.LENGTH_SHORT
                                     ).show()
