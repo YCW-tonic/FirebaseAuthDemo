@@ -27,6 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
+        android:name="com.wuhome.firebaseauthdemo.FirstFragment"
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
