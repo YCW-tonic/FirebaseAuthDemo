@@ -26,9 +26,8 @@
         app:layout_constraintStart_toEndOf="@+id/btnFragment1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:name="com.wuhome.firebaseauthdemo.FirstFragment"
-        android:id="@+id/fragment"
+    <FrameLayout
+        android:id="@+id/flFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,4 +35,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFragment1" />
+
+<!--    <fragment-->
+<!--        android:name="com.wuhome.firebaseauthdemo.FirstFragment"-->
+<!--        android:id="@+id/fragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnFragment1" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
